@@ -1,0 +1,47 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Report a Crime </h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="report" rows="6" placeholder="Enter Information"></textarea>
+                  </mat-form-field>
+
+                </div>
+                <div class="col-md-6 offset-md-3">
+                  <div class="form-group">
+
+                    <label for="file" class=" btn btn-default btn-file">Upload Your Proof</label>
+                    <input formControlName="fileSource" id="file" type="file" class="form-control"
+                      (change)="onFileChange($event)">
+                  </div>
+                  <img [src]="imageSrc" class="proofImg">
+                </div>
+
+              </div>
+              <div class="col-md-6 offset-md-3 text-right">
+                <button mat-raised-button type="submit" (click)="submit()" class="btn btn-danger pull-right">Submit
+                </button>
+              </div>
+
+
+            </form>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Send A TIp off </h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="report" placeholder="Enter Information"></textarea>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="address" placeholder="Address"></textarea>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="lga" placeholder="LGA ">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="state" placeholder="State ">
+                  </mat-form-field>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+
+                    <label for="file" class=" btn btn-default btn-file">Upload Your Proof</label>
+                    <input formControlName="fileSource" id="file" type="file" class="form-control"
+                      (change)="onFileChange($event)">
+                  </div>
+                  <img [src]="imageSrc"  class="proofImg">
+                </div>
+
+              </div>
+              <div class="text-right">
+                <button mat-raised-button type="submit" (click)="submit()" class="btn btn-danger pull-right">Submit
+                </button>
+              </div>
+
+              <div class="clearfix"></div>
+            </form>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
